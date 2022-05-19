@@ -1,0 +1,22 @@
+.newplace {
+
+    background-color: #8fbdc2;
+    border-radius: 15px;
+    height: 1050px;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+    margin-top: 30px;
+    margin-left: -4px;
+}
+
+.textPlaceForm {
+    color: #ffffff;
+    text-decoration: none;
+    text-decoration: solid;
+}
+
+.BtnPlaceForm {
+    color: #ffffff;
+}

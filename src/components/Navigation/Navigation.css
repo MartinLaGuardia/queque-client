@@ -1,0 +1,72 @@
+.navigation {
+    padding: 50px 180px;
+    display: flex;
+    justify-content: center;
+    background-color: #2b5865;
+
+}
+
+.text-Profile {
+    justify-content: end;
+    color: #ffa700;
+    text-decoration: none;
+    margin-top: 58px;
+    margin-right: 10px;
+    font-size: 1.3em;
+
+}
+
+.text-List {
+    justify-content: end;
+    color: #ffa700;
+    text-decoration: none;
+    margin-top: 58px;
+    margin-right: 10px;
+    font-size: 1.3em;
+
+}
+
+.text-LogOut {
+    justify-content: end;
+    color: #ffa700;
+    text-decoration: none;
+    margin-top: 58px;
+    margin-right: 10px;
+    font-size: 1.3em;
+
+}
+
+.text-currentUser {
+    padding: 35px 10px;
+    color: hwb(0 99% 1%);
+    text-decoration: none;
+    margin-right: 100px;
+    font-size: 3em;
+    line-break: loose;
+
+
+}
+
+.que {
+    color: #ffa700;
+    text-decoration: none;
+
+}
+
+.signup {
+    margin-top: 55px;
+    padding-top: 55px;
+    color: #ffa700;
+    text-decoration: none;
+    margin-right: 50px;
+    font-size: 1.3em;
+}
+
+.loginNavi {
+    margin-top: 55px;
+    padding: 14px 10px;
+    color: #ffa700;
+    text-decoration: none;
+    margin-right: 50px;
+    font-size: 1.3em;
+}

@@ -1,0 +1,16 @@
+.detail-form {
+    margin-top: 50px;
+    border: 1px solid black;
+
+}
+
+.btn {
+    background: none;
+}
+
+.place-button {
+    width: 150px;
+    height: 200px;
+    align-items: center;
+    
+}

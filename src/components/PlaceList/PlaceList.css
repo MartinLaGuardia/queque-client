@@ -1,0 +1,11 @@
+/* .list {
+    display: flex;
+    justify-content: space-around;
+    padding: -55px;
+
+
+} */
+
+.placecard {
+    border: 20px solid #e57601;
+}

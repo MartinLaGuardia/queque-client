@@ -1,0 +1,21 @@
+.login {
+    background-color: #8fbdc2;
+    border-radius: 15px;
+    height: 250px;
+    width: 400px;
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+    margin-top: 30px;
+    margin-left: -35px;
+}
+
+.text {
+    color: #ffffff;
+    text-decoration: none;
+    text-decoration: solid;
+}
+
+.but {
+    background-color: #e57601;
+}
