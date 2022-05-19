@@ -3,6 +3,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../context/auth.context'
+import logofav from './../../assets/img/logofav.png'
 
 
 const Navigation = () => {
@@ -14,7 +15,7 @@ const Navigation = () => {
             <Navbar className='navigation' variant="Dark" expand="lg">
                 <Container >
                     <NavLink to="/">
-                        <Navbar.Brand className='que'></Navbar.Brand>
+                        <img className='logofav' src={logofav} />
                     </NavLink>
                     <Nav>
 

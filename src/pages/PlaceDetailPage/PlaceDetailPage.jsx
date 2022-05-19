@@ -7,12 +7,15 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import CommentsForm from "../../components/NewCommentForm/NewCommentForm"
 import { AuthContext } from '../../context/auth.context'
 import usersService from "../../services/users.service"
+import commentsService from "../../services/comments.service"
 
 const PlaceDetailPage = () => {
 
 
     const [placesDetails, setPlacesDetails] = useState({})
     const [userInfo, setUserInfo] = useState({})
+    const [comments, setComments] = useState([])
+
     const { isLoggedIn } = useContext(AuthContext)
 
 
@@ -24,6 +27,7 @@ const PlaceDetailPage = () => {
     useEffect(() => {
         loadPlace(idPlace)
         userDetail(user?._id)
+        loadComments(idPlace)
     }, [])
 
     const userDetail = (id) => {
@@ -46,6 +50,14 @@ const PlaceDetailPage = () => {
             })
             .catch(err => console.log(err))
 
+    }
+
+    const loadComments = (id) => {
+
+        commentsService
+            .getCommentsByPlace(id)
+            .then(({ data }) => setComments(data))
+            .catch(err => console.log(err))
     }
 
     const deletePlace = placeId => {
@@ -152,8 +164,8 @@ const PlaceDetailPage = () => {
                 {favPlaces?.map(place => {
                     if (place._id === idPlace) {
                         return <>
-                            <CommentsForm />
-                            <CommentsByPlace idPlace={idPlace} />
+                            <CommentsForm loadComments={loadComments}/>
+                            <CommentsByPlace idPlace={idPlace} comments={comments}/>
                         </>
                     }
                 })}

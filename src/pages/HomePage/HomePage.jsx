@@ -3,8 +3,10 @@ import { Container, Button, Col } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import RandomPlaceCard from "../../components/RandomPlaceCard/RandomPlaceCard"
 import placesService from "../../services/places.service"
-import PNGLOGO from "./../../assets/img/PNGLOGO.png"
+import logoQQ from "./../../assets/img/logoQQ.png"
 import './HomePage.css'
+
+
 
 const HomePage = () => {
 
@@ -38,7 +40,7 @@ const HomePage = () => {
                     })}
                 </div>
                 <div className="qqbtn">
-                    <Button className="qqbtn" type="submit" value="Submit" onClick={() => loadRandomPlaces()}>QQ</Button>
+                <img src={logoQQ} onClick={() => loadRandomPlaces()} />
                 </div>
 
             </div>

@@ -1,0 +1,17 @@
+ .googlemap {
+     margin-top: 20px;
+     padding: 30px;
+     height: 700px;
+ }
+
+ .profilePage {
+     display: flex
+ }
+
+ .valgym {
+     width: 450px;
+ }
+
+ .valgym img {
+     width: 450px;
+ }

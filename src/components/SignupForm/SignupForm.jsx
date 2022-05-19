@@ -11,6 +11,8 @@ const SignupForm = () => {
         username: '',
         password: '',
         email: '',
+        imageURL: '',
+        favFood: ''
     })
 
     const navigate = useNavigate()
@@ -34,7 +36,7 @@ const SignupForm = () => {
         setSignupData({ ...signupData, [name]: value })
     }
 
-    const { username, password, email } = signupData
+    const { username, password, email, imageURL, favFood } = signupData
 
     return (
 
@@ -53,6 +55,16 @@ const SignupForm = () => {
             <Form.Group className="mb-3" controlId="password">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" onChange={handleInputChange} name="password" value={password} />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="imageURL">
+                <Form.Label>ImageURL</Form.Label>
+                <Form.Control type="imageURL" onChange={handleInputChange} name="imageURL" value={imageURL} />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="favFood">
+                <Form.Label>Fav Food</Form.Label>
+                <Form.Control type="favFood" onChange={handleInputChange} name="favFood" value={favFood} />
             </Form.Group>
 
             <Button variant="dark" type="submit">Let's GO!</Button>

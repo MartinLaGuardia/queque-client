@@ -1,10 +1,10 @@
 import commentsService from "../../services/comments.service"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 
 
-const CommentsForm = () => {  ////  <==={ closeComment, loadComment }
+const CommentsForm = ({ loadComments }) => {
 
     const [commentInfo, setCommentInfo] = useState({
         text: "",
@@ -14,7 +14,8 @@ const CommentsForm = () => {  ////  <==={ closeComment, loadComment }
     const { text, rating } = commentInfo
     const navigate = useNavigate()
     const { idPlace } = useParams()
-    console.log(idPlace)
+
+
 
     const handleInputChange = e => {
         const { name, value } = e.currentTarget
@@ -26,15 +27,16 @@ const CommentsForm = () => {  ////  <==={ closeComment, loadComment }
 
     }
 
+
     function handleSubmit(e) {
 
         e.preventDefault()
 
         commentsService
             .createComment(idPlace, commentInfo)
-            .then(({data}) => {
+            .then(({ data }) => {
                 setCommentInfo(data)
-                navigate(`/placedetail/${idPlace}`)
+                loadComments(idPlace)
                 // closeComment()
             })
             .catch(err => console.log(err))

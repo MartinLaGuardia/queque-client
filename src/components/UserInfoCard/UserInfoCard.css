@@ -1,0 +1,11 @@
+.cardofplaces {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+
+.favPlaces {
+    display: flex;
+}
