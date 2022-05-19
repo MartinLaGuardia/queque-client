@@ -3,7 +3,9 @@ import axios from 'axios'
 class AuthService {
 
     constructor() {
-        this.app = axios.create({ baseURL: 'http://localhost:5005/api/auth' })
+        this.app = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}/auth` })
+
+        console.log('DEPLOY --->', process.env.REACT_APP_API_URL)
     }
 
     signup = user => {

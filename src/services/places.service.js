@@ -3,7 +3,9 @@ import axios from 'axios'
 class PlacesService {
 
     constructor() {
-        this.app = axios.create({ baseURL: 'http://localhost:5005/api/places' })
+        this.app = axios.create({
+            baseURL: `${process.env.REACT_APP_API_URL}/places`
+        })
 
         this.app.interceptors.request.use((config) => {
 
