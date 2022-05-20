@@ -1,6 +1,7 @@
 import { ListGroup, ListGroupItem, Card, Container } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 import placesService from "../../services/places.service";
+import './RandomPlaceCard.css'
 
 const RandomPlaceCard = ({ _id, name, imageURL, description, foodstyle, phone, address }) => {
 
@@ -8,7 +9,7 @@ const RandomPlaceCard = ({ _id, name, imageURL, description, foodstyle, phone, a
 
         <Container className="cards">
             <Link to={`/placedetail/${_id}`}>
-                <Card style={{ width: '18rem' }}>
+                <Card style={{ width: '19rem' }}>
                     <Card.Img variant="top" src={imageURL} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>

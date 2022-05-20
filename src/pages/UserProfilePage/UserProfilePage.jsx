@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col, Row, Container, Image } from 'react-bootstrap';
 import UserInfoCard from "../../components/UserInfoCard/UserInfoCard"
 import usersService from "../../services/users.service"
 import { AuthContext } from "../../context/auth.context"
@@ -41,8 +41,8 @@ const ProfilePage = () => {
 
 
     const containerStyle = {
-        width: '500px',
-        height: '500px'
+        width: '450px',
+        height: '450px'
     };
 
 
@@ -62,38 +62,40 @@ const ProfilePage = () => {
                     <Col className="profilePage">
 
                         <div className='valgym'>
-                            <img src={valgym} alt="Valeria en el Mex"></img>
-                            <p><strong>Nombre: </strong> {userInfo?.username} Pereira Millán</p>
-                            <p><strong>Foodie: </strong>de biberones</p>
-                            <p><strong>Comida favorita: </strong> Fórmula Hero2</p>
+                            <Image src={userInfo?.imageURL} alt="#" roundedCircle />
+                            <div className='textProfile'>
+                                <p><strong>Nombre: </strong> {userInfo?.username}</p>
+                                <p><strong>Comida favorita: </strong> {userInfo.favFood}</p>
+                            </div>
                         </div>
 
 
                         <div className="googlemap">
-                            {isLoaded && <GoogleMap
-                                mapContainerStyle={containerStyle}
-                                center={center}
-                                zoom={15}
-                            >
-                                {userInfo?.favPlaces?.map(favPlace => {
-                                    return (
-                                        <Marker
-                                            position={{
-                                                lat: favPlace.address?.location?.coordinates[1],
-                                                lng: favPlace?.address?.location?.coordinates[0]
-                                            }}
-                                        />
-                                    )
-                                })}
+                            <Col>
+                                {isLoaded && <GoogleMap
+                                    mapContainerStyle={containerStyle}
+                                    center={center}
+                                    zoom={12}
+                                >
+                                    {userInfo?.favPlaces?.map(favPlace => {
+                                        return (
+                                            <Marker
+                                                position={{
+                                                    lat: favPlace.address?.location?.coordinates[1],
+                                                    lng: favPlace?.address?.location?.coordinates[0]
+                                                }}
+                                            />
+                                        )
+                                    })}
 
-                            </GoogleMap>}
-
+                                </GoogleMap>}
+                            </Col>
                         </div>
+
                     </Col>
 
                     <Container fluid className="cardofplaces" >
                         <Row>
-
 
                             <Row className="favPlaces">{userInfo.favPlaces?.map(favPlace => {
                                 return <Col key={favPlace._id}> <PlaceCard {...favPlace} /></Col>

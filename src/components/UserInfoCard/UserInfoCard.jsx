@@ -13,7 +13,7 @@ const UserInfoCard = ({ userInfo }) => {
     return (
 
         <div>
-            
+
 
 
 

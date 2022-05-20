@@ -33,14 +33,14 @@ const HomePage = () => {
         <Container >
             <div >
 
-                <div className='place-button'>
+                <div className='radnom-cards'>
                     {randomPlaces.map(randomPlace => {
                         return <Col md={4} key={randomPlace._id}> <RandomPlaceCard {...randomPlace} /> </Col>
 
                     })}
                 </div>
-                <div className="qqbtn">
-                <img src={logoQQ} onClick={() => loadRandomPlaces()} />
+                <div >
+                    <img className="qqbtn" src={logoQQ} onClick={() => loadRandomPlaces()} />
                 </div>
 
             </div>

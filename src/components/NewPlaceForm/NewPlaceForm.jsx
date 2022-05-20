@@ -52,37 +52,32 @@ const NewPlaceForm = ({ loadPlaces }) => {
         <Col lg={5} className="mx-auto">
             <Form className="newplace" onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="name">
-                    <Form.Label className="textPlaceForm">Name</Form.Label>
+                    <Form.Label className="textPlaceForm">Nombre:</Form.Label>
                     <Form.Control type="text" value={name} onChange={handleInputChange} name="name" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="description">
-                    <Form.Label className="textPlaceForm">Description</Form.Label>
+                    <Form.Label className="textPlaceForm">Descripción:</Form.Label>
                     <Form.Control type="text" value={description} onChange={handleInputChange} name="description" />
                 </Form.Group>
 
-                {/* <Form.Group className="mb-3" controlId="owner">
-                <Form.Label>Owner</Form.Label>
-                <Form.Control type="number" value={owner} onChange={handleInputChange} name="owner" />
-            </Form.Group> */}
-
                 <Form.Group className="mb-3" controlId="foodstyle">
-                    <Form.Label className="textPlaceForm">Foodstyle</Form.Label>
+                    <Form.Label className="textPlaceForm">Tipo de comida:</Form.Label>
                     <Form.Control type="text" value={foodstyle} onChange={handleInputChange} name="foodstyle" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="street">
-                    <Form.Label className="textPlaceForm">Street</Form.Label>
+                    <Form.Label className="textPlaceForm">Street:</Form.Label>
                     <Form.Control type="text" value={street} onChange={handleInputChange} name="street" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="number">
-                    <Form.Label className="textPlaceForm">Number</Form.Label>
+                    <Form.Label className="textPlaceForm">Número:</Form.Label>
                     <Form.Control type="number" value={number} onChange={handleInputChange} name="number" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="city">
-                    <Form.Label className="textPlaceForm">City</Form.Label>
+                    <Form.Label className="textPlaceForm">Ciudad:</Form.Label>
                     <Form.Control type="text" value={city} onChange={handleInputChange} name="city" />
                 </Form.Group>
 
@@ -92,26 +87,26 @@ const NewPlaceForm = ({ loadPlaces }) => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="phone">
-                    <Form.Label className="textPlaceForm">Phone</Form.Label>
+                    <Form.Label className="textPlaceForm">Teléfono</Form.Label>
                     <Form.Control type="text" value={phone} onChange={handleInputChange} name="phone" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="number">
-                    <Form.Label className="textPlaceForm">Latitude</Form.Label>
+                    <Form.Label className="textPlaceForm">Latitud</Form.Label>
                     <Form.Control type="number" value={latitude} onChange={handleInputChange} name="latitude" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="number">
-                    <Form.Label className="textPlaceForm">Longitude</Form.Label>
+                    <Form.Label className="textPlaceForm">Longitud</Form.Label>
                     <Form.Control type="number" value={longitude} onChange={handleInputChange} name="longitude" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="imageUrl">
-                    <Form.Label className="textPlaceForm">Image (URL)</Form.Label>
+                    <Form.Label className="textPlaceForm">Imagen (URL)</Form.Label>
                     <Form.Control type="text" value={imageURL} onChange={handleInputChange} name="imageURL" />
                 </Form.Group>
 
-                <Button variant="light" type="submit">New Place</Button>
+                <Button variant="light" type="submit">Crear</Button>
             </Form>
             </Col>
         // </Container>

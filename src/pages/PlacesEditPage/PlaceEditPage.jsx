@@ -6,7 +6,6 @@ const PlaceEditPage = () => {
 
     return (
         <>
-        <h1>SOY LA PAGINA DE EDITAR LUGAR</h1>
         <EditPlaceForm />
         </>
     )

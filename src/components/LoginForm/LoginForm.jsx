@@ -3,6 +3,7 @@ import { Form, Button, Container } from 'react-bootstrap'
 import authService from '../../services/auth.service'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from './../../context/auth.context'
+import entry from './../../assets/img/Buttons/entry.png'
 import './LoginForm.css'
 
 
@@ -46,16 +47,16 @@ const LoginForm = () => {
             <Form className="login" onSubmit={handleSubmit}>
 
                 <Form.Group className="mb-3" controlId="email">
-                    <Form.Label className="text" >Email</Form.Label>
+                    <Form.Label className="textLogin" >Email</Form.Label>
                     <Form.Control type="email" onChange={handleInputChange} name="email" value={email} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="password">
-                    <Form.Label className="text">Password</Form.Label>
+                    <Form.Label className="textLogin">Contraseña</Form.Label>
                     <Form.Control type="password" onChange={handleInputChange} name="password" value={password} />
                 </Form.Group>
 
-                <Button variant="dark" type="submit" >Log IN</Button>
+                <button className="borange" type="submit"><img className="btnEntry" src={entry} alt="login"></img></button>
 
             </Form>
         </Container>

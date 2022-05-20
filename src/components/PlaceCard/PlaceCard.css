@@ -1,8 +1,8 @@
 .cards {
     display: flex;
     justify-content: space-around;
-    margin-top: 15px;
-    padding: 15px;
+    margin-top: 25px;
+    padding: 25px;
     flex-wrap: wrap;
 
 }

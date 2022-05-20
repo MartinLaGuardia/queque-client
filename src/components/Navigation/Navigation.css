@@ -3,45 +3,56 @@
     display: flex;
     justify-content: center;
     background-color: #2b5865;
-    height: 200px;
+    height: 180px;
 
 }
 
 .text-Profile {
     justify-content: end;
-    color: #ffa700;
+    color: #ffffff;
     text-decoration: none;
-    margin-top: 58px;
-    margin-right: 10px;
+    margin-top: 65px;
+    margin-right: 25px;
     font-size: 1.3em;
 
 }
 
 .text-List {
     justify-content: end;
-    color: #ffa700;
+    color: #ffffff;
     text-decoration: none;
-    margin-top: 58px;
-    margin-right: 10px;
+    margin-top: 65px;
+    margin-right: 25px;
     font-size: 1.3em;
 
 }
 
 .text-LogOut {
     justify-content: end;
-    color: #ffa700;
+    color: #ffffff;
     text-decoration: none;
-    margin-top: 58px;
-    margin-right: 10px;
+    margin-top: 65px;
+    margin-right: 25px;
     font-size: 1.3em;
 
 }
 
 .text-currentUser {
-    padding: 35px 10px;
+    padding: 40px 10px;
     color: hwb(0 99% 1%);
     text-decoration: none;
-    margin-right: 100px;
+    margin-right: 230px;
+    font-size: 3em;
+    line-break: loose;
+
+
+}
+
+.text-currentUser2 {
+    padding: 40px 10px;
+    color: hwb(0 99% 1%);
+    text-decoration: none;
+    margin-right: 140px;
     font-size: 3em;
     line-break: loose;
 
@@ -55,8 +66,9 @@
 }
 
 .signup {
-    margin-top: 100px;
-    padding-top: 55px;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
     color: #f7f5f3;
     text-decoration: none;
     margin-right: 50px;
@@ -65,12 +77,16 @@
 
 .loginNavi {
     align-items: center;
-    color: #e57601;
+    color: #ffa700;
     text-decoration: none;
     margin-right: 50px;
     font-size: 1.3em;
 }
 
-.logofav {
-    width: 100px;
+.logoQQ {
+    width: 300px;
+    position: absolute;
+    bottom: 30px;
+    left: 300px;
+    top: -55px
 }

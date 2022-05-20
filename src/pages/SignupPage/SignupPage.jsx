@@ -1,5 +1,6 @@
 import { Container, Button, Row, Col } from 'react-bootstrap'
 import SignupForm from '../../components/SignupForm/SignupForm'
+import "./SignupPage.css"
 
 const SignupPage = () => {
 
@@ -7,8 +8,6 @@ const SignupPage = () => {
         <Container>
             <Row>
                 <Col md={{ span: 6, offset: 3 }}>
-                    <h1>Sign Up</h1>
-                    <hr />
                     <SignupForm />
                 </Col>
             </Row>

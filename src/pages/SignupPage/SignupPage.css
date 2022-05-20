@@ -1,0 +1,42 @@
+.SignUpForm {
+
+    background-color: #ffa700;
+    border-radius: 15px;
+    position: relative;
+    right: 5px;
+    left: 45px;
+    padding: 15px;
+    width: 500;
+    height: 700px;
+    top: 200px;
+
+}
+
+.text {
+    font-size: 1.9em;
+    color: #ffffff;
+    text-decoration: none;
+    text-decoration: solid;
+}
+
+.SU {
+    text-align: center;
+    position: absolute;
+    top: 200px;
+    right: 1095px
+}
+
+.sendSign {
+    width: 300px;
+    position: absolute;
+    bottom: 640px;
+    right: 10px;
+}
+
+.btnRegister {
+    width: 300px;
+    position: absolute;
+    bottom: 540px;
+    left: 90px;
+
+}

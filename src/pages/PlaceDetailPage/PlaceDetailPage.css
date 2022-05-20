@@ -1,16 +1,120 @@
-.detail-form {
+.detail-form1 {
     margin-top: 50px;
     border: 1px solid black;
 
 }
 
-.btn {
-    background: none;
+.btnFunction {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 1250px;
+    right: -350px;
+
+
 }
 
-.place-button {
+.btnEdit {
+    width: 150px;
+    position: absolute;
+    bottom: -110px;
+    right: 790px;
+}
+
+.btnBorrar {
+    width: 150px;
+    position: absolute;
+    bottom: -110px;
+    right: 1015px;
+}
+
+.btnFav {
+    width: 150px;
+    position: absolute;
+    bottom: -110px;
+    right: 1250px;
+}
+
+.btnDesfavorito {
+    width: 160px;
+    position: absolute;
+    bottom: -113px;
+    right: 1050px;
+}
+
+.btnSend {
+    width: 150px;
+}
+
+.btnGoBack {
+    width: 150px;
+    position: absolute;
+    top: 2300px;
+    right: 50%;
+
+}
+
+
+
+
+.place-button1 {
     width: 150px;
     height: 200px;
     align-items: center;
-    
+
+}
+
+.formFrame {
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+
+}
+
+.text-frame {
+    padding: 15px;
+    position: absolute;
+    left: 100px;
+    color: #2b5865;
+    text-decoration: none;
+    text-decoration: solid;
+    padding-top: 50px;
+
+}
+
+.text-frame h1 {
+    color: #e57601;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    text-transform: uppercase;
+}
+
+.text-frame h2 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-decoration: underline #e57601;
+}
+
+.picturePlace {
+    width: 500px;
+    position: absolute;
+    bottom: -190px;
+    right: -35px;
+
+}
+
+.mapit {
+    position: absolute;
+    bottom: 300px;
+    right: -1100px;
+
+}
+
+.commentsForm {
+    font-size: 1.3em;
+    position: absolute;
+    top: auto;
+    left: 295px;
+    width: 80;
+    top: 1150px;
 }

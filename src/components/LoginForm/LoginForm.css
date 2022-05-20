@@ -1,21 +1,33 @@
 .login {
     background-color: #e57601;
     border-radius: 15px;
-    height: 350px;
-    width: 600px;
+    height: 550px;
+    width: 750px;
     position: relative;
     overflow: hidden;
     padding: 15px;
     margin-top: 120px;
-    margin-left: 330px;
+    margin-left: 300px;
 }
 
-.text {
+.textLogin {
     color: #ffffff;
     text-decoration: none;
     text-decoration: solid;
+    font-size: 2em;
+    text-justify: distribute;
+
 }
 
 .but {
     background-color: #e57601;
+}
+
+.btnEntry {
+    width: 200px;
+}
+
+.borange {
+    background-color: #e57601;
+    border: none;
 }

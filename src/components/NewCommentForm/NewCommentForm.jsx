@@ -2,6 +2,8 @@ import commentsService from "../../services/comments.service"
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
+import btnSend from './../../assets/img/Buttons/btnSend.png'
+import './NewCommentForm.css'
 
 
 const CommentsForm = ({ loadComments }) => {
@@ -44,15 +46,16 @@ const CommentsForm = ({ loadComments }) => {
     }
 
     return (
-        <>
+
+        <div className="commentsForm">
             <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3">
-                    <Form.Label>What do you want to remember of this place?</Form.Label>
-                    <Form.Control as="textarea" name="text" className="form-input" value={text} onChange={handleInputChange} />
+                <Form.Group >
+                    <Form.Label>¿Que es lo que más recuerdas de este sitio?</Form.Label>
+                    <Form.Control as="textarea" name="text" value={text} onChange={handleInputChange} />
                 </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Satisfaction level</Form.Label>
-                    <Form.Select name="rating" value={rating} onChange={handleInputChange} className="form-input">
+                <Form.Group >
+                    <Form.Label>¿Cuánto le das?</Form.Label>
+                    <Form.Select name="rating" value={rating} onChange={handleInputChange} >
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -61,11 +64,12 @@ const CommentsForm = ({ loadComments }) => {
                         <option>5</option>
                     </Form.Select>
                 </Form.Group>
-                <Button className="form-button" type="submit">
-                    Submit
-                </Button>
+                <button type="submit" className="commentbtn"><img className="btnSend" src={btnSend}>
+                </img></button>
+
             </Form>
-        </>
+        </div>
+
     )
 }
 

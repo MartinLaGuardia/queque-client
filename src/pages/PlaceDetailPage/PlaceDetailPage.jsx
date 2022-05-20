@@ -1,13 +1,20 @@
 import placesService from "../../services/places.service"
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom'
 import { useContext, useEffect, useState } from "react"
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Container, Row, Col, Button, Image, ButtonToolbar } from 'react-bootstrap'
 import CommentsByPlace from "../../components/CommentsByPlace/CommentsByPlace"
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import CommentsForm from "../../components/NewCommentForm/NewCommentForm"
 import { AuthContext } from '../../context/auth.context'
 import usersService from "../../services/users.service"
 import commentsService from "../../services/comments.service"
+import btnFav from './../../assets/img/Buttons/btnFav.png'
+import btnDesfav from './../../assets/img/Buttons/btnDesfav.png'
+import btnEditar from './../../assets/img/Buttons/btnEditar.png'
+import btnErase from './../../assets/img/Buttons/btnErase.png'
+import btnVolver from './../../assets/img/Buttons/btnVolver.png'
+import './PlaceDetailPage.css'
+
 
 const PlaceDetailPage = () => {
 
@@ -93,7 +100,7 @@ const PlaceDetailPage = () => {
     })
 
     const containerStyle = {
-        width: '400px',
+        width: '600px',
         height: '400px'
     };
 
@@ -105,93 +112,117 @@ const PlaceDetailPage = () => {
 
     return (
 
-        <Container className="detail-form">
-            <h1>{placesDetails?.name}</h1>
-            <Row>
-                <Col md={{ span: 4, offset: 1 }}>
-                    <h3>Description</h3>
-                    <p>{placesDetails?.description}</p>
-                    <h3>Foodstyle</h3>
-                    <p>{placesDetails?.foodstyle}</p>
-                    <h3>City</h3>
-                    <p>{placesDetails?.address?.city}</p>
-                    <h3>Street</h3>
-                    <p>{placesDetails?.address?.street}</p>
-                    <h3>Number</h3>
-                    <p>{placesDetails?.address?.number}</p>
-                    <h3>zipCode</h3>
-                    <p>{placesDetails?.address?.zipCode}</p>
-                    <h3>Phone</h3>
-                    <p>{placesDetails?.phone}</p>
-                    <h3>Location</h3>
-                    <p>Longitude: {placesDetails?.longitude}</p>
-                    <p>latitude: {placesDetails?.latitude}</p>
-                </Col>
-                <Col md={{ span: 6 }}>
-                    <img style={{ width: '100%' }} src={placesDetails?.imageURL} alt={placesDetails.name} />
-                </Col>
-                <Link to="/placelist" className="btn">
-                    <Button variant="dark">Go back!</Button>
+        <div>
+
+            <Container className="formFrame">
+
+                <Row>
+
+                    <Col className="text-frame" md={{ span: 4, offset: 1 }}>
+                        <h1>{placesDetails?.name}</h1>
+                        <h2>Descripción: </h2>
+                        <h4>{placesDetails?.description}</h4>
+                        <h2>Tipo de comida: </h2>
+                        <h4>{placesDetails?.foodstyle}</h4>
+                        <h2>Calle: </h2>
+                        <h4>{placesDetails?.address?.street}</h4>
+                        <h2>Número: </h2>
+                        <h4>{placesDetails?.address?.number}</h4>
+                        <h2>Ciudad: </h2>
+                        <h4>{placesDetails?.address?.city}</h4>
+                        <h2>Zip Code: </h2>
+                        <h4>{placesDetails?.address?.zipCode}</h4>
+                        <h2>Teléfono: </h2>
+                        <h4>{placesDetails?.phone}</h4>
+                    </Col>
+
+                    <Col className="mapit">
+                        {isLoaded &&
+                            <GoogleMap
+                                mapContainerStyle={containerStyle}
+                                center={center}
+                                zoom={18}
+                            >
+                                <Marker
+                                    position={{
+                                        lat: placesDetails?.address?.location?.coordinates[1],
+                                        lng: placesDetails?.address?.location?.coordinates[0]
+                                    }}
+                                />
+                            </GoogleMap>
+
+                        }
+
+                    </Col>
+
+                </Row>
+
+            </Container>
+
+            <Col className="picturePlace" md={{ span: 6, offset: 6 }}>
+                <img style={{ width: '600px' }} src={placesDetails?.imageURL} alt={placesDetails.name} />
+            </Col>
+
+            <Container className="btnFunction">
+                <Row>
+                    <Col>
+                        <Link to={`/${idPlace}/edit-places`} >
+                            {
+                                user?.role === 'ADMIN' && <img className="btnEdit" src={btnEditar} alt="botón editar"></img>
+                            }
+                        </Link>
+                    </Col>
+
+                    <Col>
+                        <div >
+                            {
+                                user?.role === 'ADMIN' && <img className="btnBorrar" src={btnErase} alt="Botón borrar" onClick={() => deletePlace(idPlace)}></img>
+                            }
+                        </div>
+                    </Col>
+
+                    <Col>
+                        <div >
+                            {
+                                isLoggedIn && <img className="btnFav" src={btnFav} alt="favorito" onClick={() => addToFavs(idPlace)}></img>//<Button type="submit" value="Submit" onClick={() => addToFavs(idPlace)}>Favoritear</Button>
+                            }
+                        </div>
+                    </Col>
+                    <Col>
+                        <div >
+                            {
+                                isLoggedIn && <img className="btnDesfavorito" src={btnDesfav} alt="Botón quitar favorito" onClick={() => deleteFav(idPlace)}></img>
+
+                            }
+
+                        </div>
+                    </Col>
+                </Row>
+
+            </Container>
+
+            <Col>
+                <Link to="/">
+                    <img className="btnGoBack" src={btnVolver} alt="botón volver"></img>
                 </Link>
+            </Col>
 
-                <Link to={`/${idPlace}/edit-places`} className="btn">
-                    {
-                        user?.role === 'ADMIN' && <Button variant="dark">Edit place</Button>
-                    }
-                </Link>
+            <Container >
+
+                {
+                    favPlaces?.map(place => {
+                        if (place._id === idPlace) {
+                            return <>
+                                <CommentsForm loadComments={loadComments} />
+                                <CommentsByPlace idPlace={idPlace} comments={comments} />
+                            </>
+                        }
+                    })
+                }
+            </Container>
 
 
-                <div className='place-button'>
-                    {
-                        user?.role === 'ADMIN' && <Button type="submit" value="Submit" onClick={() => deletePlace(idPlace)}>Delete Place</Button>
-                    }
-                </div>
-
-                <div className='place-button'>
-                    {
-                        isLoggedIn && <Button type="submit" value="Submit" onClick={() => addToFavs(idPlace)}>Add to favs</Button>
-                    }
-                </div>
-
-                <div className='place-button'>
-                    {
-                        isLoggedIn && <Button type="submit" value="Submit" onClick={() => deleteFav(idPlace)}>Delete fav</Button>
-
-                    }
-
-                </div>
-
-                {favPlaces?.map(place => {
-                    if (place._id === idPlace) {
-                        return <>
-                            <CommentsForm loadComments={loadComments}/>
-                            <CommentsByPlace idPlace={idPlace} comments={comments}/>
-                        </>
-                    }
-                })}
-
-                <Col>
-                    {isLoaded &&
-                        <GoogleMap
-                            mapContainerStyle={containerStyle}
-                            center={center}
-                            zoom={15}
-                        >
-                            <Marker
-                                position={{
-                                    lat: placesDetails?.address?.location?.coordinates[1],
-                                    lng: placesDetails?.address?.location?.coordinates[0]
-                                }}
-                            />
-                        </GoogleMap>
-
-                    }
-
-                </Col>
-
-            </Row>
-
-        </Container >
+        </div >
 
     )
 }

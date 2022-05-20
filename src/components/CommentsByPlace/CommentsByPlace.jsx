@@ -6,25 +6,25 @@ import CommentsCard from "../CommentsCard/CommentsCard"
 
 
 
-const CommentsByPlace = ({ idPlace, comments }) => {
+const CommentsByPlace = ({ idPlace }) => {
 
     const navigate = useNavigate()
 
-    // const [comments, setComments] = useState([])
+    const [comments, setComments] = useState([])
 
-    // useEffect(() => {
-    //     loadComments(idPlace)
-    // }, [])
+    useEffect(() => {
+        loadComments(idPlace)
+    }, [])
 
-    // const loadComments = (id) => {
+    const loadComments = (id) => {
 
-    //     commentsService
-    //         .getCommentsByPlace(id)
-    //         .then(({ data }) => setComments(data))
-    //         .catch(err => console.log(err))
-    // }
+        commentsService
+            .getCommentsByPlace(id)
+            .then(({ data }) => setComments(data))
+            .catch(err => console.log(err))
+    }
 
-    // console.log(comments)
+    console.log(comments)
 
     return (
 

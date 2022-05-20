@@ -1,13 +1,13 @@
-.place-button {
+.radnom-cards {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding: 20px;
 }
 
 .qqbtn {
-    display: flex;
-    justify-content: center;
-}
-
-.qqbtn img {
-    width: 290px;
+    width: 320px;
+    position: absolute;
+    left: 980px;
+    bottom: -220px;
 }

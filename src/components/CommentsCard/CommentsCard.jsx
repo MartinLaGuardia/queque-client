@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom"
-import { Button, Container } from 'react-bootstrap'
+import { Button, Container, Form } from 'react-bootstrap'
 import commentsService from "../../services/comments.service"
 import CommentsByPlace from "../CommentsByPlace/CommentsByPlace"
+import btnErase from "./../../assets/img/Buttons/btnErase.png"
+import { Row, Col } from 'react-bootstrap'
+import './CommentsCard.css'
 
 
 const CommentsCard = ({ text, rating, _id }) => {
@@ -12,23 +15,28 @@ const CommentsCard = ({ text, rating, _id }) => {
 
         commentsService
             .deleteComment(commentId)
-            .then(() => navigate('/placelist'))
+            .then(() => navigate('/myprofile'))
             .catch(err => console.log(err))
 
     }
 
 
     return (
-        
-            <Container className="comments">
-                <p>COMENTARIO:</p>
-                <p>Contenido: {text}</p>
-                <p>Rating: {rating}</p>
-                <div className='place-button'>
-                    <Button type="submit" value="Submit" onClick={() => deleteComments(_id)}>Delete</Button>
-                </div>
-            </Container>
-        
+
+        <Container lg={4} className="comments1">
+            <Row>
+                <Col>
+                    <h3>Observaciones:</h3>
+                </Col>
+                <Col> <h5>{text}</h5></Col>
+                <Col>  <h4> ⭐  {rating}</h4>
+                    <div className='place-button'>
+                        <img className="btnErase" src={btnErase} alt="botón de borrar" onClick={() => deleteComments(_id)}></img>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
+
     )
 
 

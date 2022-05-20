@@ -1,10 +1,9 @@
 import './Navigation.css'
-import { Navbar, Container, Nav } from 'react-bootstrap'
+import { Navbar, Container, Nav, Col, Row } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../context/auth.context'
-import logofav from './../../assets/img/logofav.png'
-
+import logoQQ from './../../assets/img/logoQQ.png'
 
 const Navigation = () => {
 
@@ -14,17 +13,17 @@ const Navigation = () => {
         <>
             <Navbar className='navigation' variant="Dark" expand="lg">
                 <Container >
-                    <NavLink to="/">
-                        <img className='logofav' src={logofav} />
+                    <NavLink to={'/'}>
+                        <img className='logoQQ' src={logoQQ} />
                     </NavLink>
                     <Nav>
 
                         {
                             isLoggedIn
                                 ?
-                                <NavLink to="/" className='text-currentUser' > ¿Y hoy... qué te apetece, {user.username}?</NavLink>
+                                <NavLink to="/" className='text-currentUser2' > ¿Y hoy qué comemos, {user.username}?</NavLink>
                                 :
-                                <NavLink to="/" className='text-currentUser' > ¿Y hoy... qué te apetece?</NavLink>
+                                <NavLink to="/" className='text-currentUser' > ¿Y hoy qué comemos?</NavLink>
 
                         }
 
@@ -43,8 +42,10 @@ const Navigation = () => {
                                 <div className='text-LogOut' onClick={logOutUser}>Salir</div>
                                 :
                                 <div >
-                                    <NavLink to="/signup" className='signup'> Regístrate</NavLink>
-                                    <NavLink to="/login" className='loginNavi'>Loguéate</NavLink>
+                                    <Container>
+                                        <NavLink to="/signup" className='signup'> Regístrate</NavLink>
+                                        <NavLink to="/login" className='loginNavi'>Loguéate</NavLink>
+                                    </Container>
                                 </div>
                         }
 
