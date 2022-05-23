@@ -112,12 +112,10 @@ const PlaceDetailPage = () => {
 
     return (
 
-        <div>
+        <div >
 
             <Container className="formFrame">
-
                 <Row>
-
                     <Col className="text-frame" md={{ span: 4, offset: 1 }}>
                         <h1>{placesDetails?.name}</h1>
                         <h2>Descripción: </h2>
@@ -221,9 +219,7 @@ const PlaceDetailPage = () => {
                 }
             </Container>
 
-
         </div >
-
     )
 }
 

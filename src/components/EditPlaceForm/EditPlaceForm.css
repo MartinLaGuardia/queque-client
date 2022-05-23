@@ -1,0 +1,80 @@
+.EditForm {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 420px;
+}
+
+.EditForm1 {
+
+    display: flex;
+    justify-content: center;
+    background-color: #2b5865;
+    border-radius: 15px;
+    height: 150px;
+    width: 800px;
+    position: relative;
+    overflow: hidden;
+    top: 100px;
+    padding-top: 25px;
+    margin-top: 500px;
+    margin-left: 300px;
+    color: white;
+    font-size: 1.3em;
+
+
+}
+
+.EditForm2 {
+
+    display: flex;
+    background-color: #2b5865;
+    border-radius: 15px;
+    height: 150px;
+    width: 800px;
+    position: relative;
+    overflow: hidden;
+    top: 150px;
+    padding: 25px;
+    margin: 20px;
+    margin-left: 300px;
+    color: white;
+    font-size: 1.3em;
+
+}
+
+.EditForm3 {
+
+    display: flex;
+    background-color: #2b5865;
+    border-radius: 15px;
+    height: 150px;
+    width: 850px;
+    position: relative;
+    overflow: hidden;
+    top: 200px;
+    padding: 15px;
+    margin-top: 120px;
+    margin-left: 300px;
+    color: white;
+    font-size: 1.3em;
+
+}
+
+.btnEdition {
+    width: 150px;
+
+}
+
+.btnSubmit {
+    background-color: #2b5865;
+    border: none;
+    height: 90px;
+    position: absolute;
+    left: 1050px;
+    top: 520px
+}
+
+.text {
+    font-size: 1em;
+}

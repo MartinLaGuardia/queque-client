@@ -1,6 +1,6 @@
-import { useState } from "react"
-import { useParams } from "react-router-dom"
 import EditPlaceForm from "../../components/EditPlaceForm/EditPlaceForm"
+import './PlaceEditPage.css' 
+
 
 const PlaceEditPage = () => {
 
@@ -12,7 +12,6 @@ const PlaceEditPage = () => {
 
 
 }
-
 
 
 export default PlaceEditPage

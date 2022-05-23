@@ -1,7 +1,7 @@
 .login {
-    background-color: #e57601;
+    background-color: #2b5865;
     border-radius: 15px;
-    height: 550px;
+    height: 450px;
     width: 750px;
     position: relative;
     overflow: hidden;
@@ -20,7 +20,7 @@
 }
 
 .but {
-    background-color: #e57601;
+    background-color: #8fbdc2;
 }
 
 .btnEntry {
@@ -28,6 +28,6 @@
 }
 
 .borange {
-    background-color: #e57601;
+    background-color: #2b5865;
     border: none;
 }

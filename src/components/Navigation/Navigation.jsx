@@ -26,29 +26,31 @@ const Navigation = () => {
                                 <NavLink to="/" className='text-currentUser' > ¿Y hoy qué comemos?</NavLink>
 
                         }
+                        <div className="itemsNav">
+                            {
+                                isLoggedIn && <NavLink to="/myprofile" className='text-Profile'>Perfil</NavLink>
+                            }
 
-                        {
-                            isLoggedIn && <NavLink to="/myprofile" className='text-Profile'>Perfil</NavLink>
-                        }
+                            {
+                                user?.role === 'ADMIN' && <NavLink to="/placelist" className='text-List'>Listado</NavLink>
 
-                        {
-                            user?.role === 'ADMIN' && <NavLink to="/placelist" className='text-List'>Listado</NavLink>
+                            }
 
-                        }
-
-                        {
-                            isLoggedIn
-                                ?
-                                <div className='text-LogOut' onClick={logOutUser}>Salir</div>
-                                :
-                                <div >
-                                    <Container>
-                                        <NavLink to="/signup" className='signup'> Regístrate</NavLink>
-                                        <NavLink to="/login" className='loginNavi'>Loguéate</NavLink>
-                                    </Container>
-                                </div>
-                        }
-
+                            {
+                                isLoggedIn
+                                    ?
+                                    <NavLink to="/login">
+                                        <Nav.Link className='LogOutNavi' as="span" onClick={logOutUser}>Salir</Nav.Link>
+                                    </NavLink>
+                                    :
+                                    <div >
+                                        <Container>
+                                            <NavLink to="/signup" className='signupNavi'> Regístrate</NavLink>
+                                            <NavLink to="/login" className='loginNavi'>Loguéate</NavLink>
+                                        </Container>
+                                    </div>
+                            }
+                        </div>
                     </Nav>
                 </Container>
             </Navbar>

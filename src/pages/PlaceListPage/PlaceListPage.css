@@ -1,0 +1,13 @@
+.newPlaceForm {
+    position: absolute;
+    right: 60px;
+    top: 335px;
+}
+
+.text-create {
+    position: absolute;
+    top: 270px;
+    left: 1380px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.9em;
+}

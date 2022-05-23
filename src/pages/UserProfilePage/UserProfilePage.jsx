@@ -36,7 +36,7 @@ const ProfilePage = () => {
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: 'AIzaSyC_BVbN4u5QJtcEGxCAvlfc89wIeXcZjsE'
+        googleMapsApiKey: process.env.REACT_APP_API_KEY
     })
 
 
@@ -56,13 +56,13 @@ const ProfilePage = () => {
 
     return (
 
-        <div>
-            <Container>
+        <div className="allPage">
+            <Container  >
                 <Row>
                     <Col className="profilePage">
 
                         <div className='valgym'>
-                            <Image src={userInfo?.imageURL} alt="#" roundedCircle />
+                            <Image src={userInfo?.imageURL} alt="valeria" roundedCircle />
                             <div className='textProfile'>
                                 <p><strong>Nombre: </strong> {userInfo?.username}</p>
                                 <p><strong>Comida favorita: </strong> {userInfo.favFood}</p>
@@ -91,18 +91,15 @@ const ProfilePage = () => {
                                 </GoogleMap>}
                             </Col>
                         </div>
-
                     </Col>
 
-                    <Container fluid className="cardofplaces" >
-                        <Row>
+                    <h1 className="favs">Lugares favoritos</h1>
 
-                            <Row className="favPlaces">{userInfo.favPlaces?.map(favPlace => {
-                                return <Col key={favPlace._id}> <PlaceCard {...favPlace} /></Col>
-                            })
-                            }</Row>
-
-                        </Row>
+                    <Container className="cardofplaces" >
+                        <Row className="favPlaces">{userInfo.favPlaces?.map(favPlace => {
+                            return <Col lg={4} key={favPlace._id}> <PlaceCard {...favPlace} /></Col>
+                        })
+                        }</Row>
 
                     </Container>
 

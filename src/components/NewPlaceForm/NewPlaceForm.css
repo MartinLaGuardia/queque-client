@@ -1,6 +1,6 @@
 .newplace {
 
-    background-color: #8fbdc2;
+    background-color: #2b5865;
     border-radius: 15px;
     height: 1150px;
     width: 400px;
@@ -19,4 +19,18 @@
 
 .BtnPlaceForm {
     color: #ffffff;
+}
+
+.btnCreate {
+    width: 150px;
+
+}
+
+.create {
+    background-color: #2b5865;
+    border: none;
+    height: 90px;
+    position: absolute;
+    left: 10px;
+    top: 970px
 }

@@ -66,7 +66,6 @@ const CommentsForm = ({ loadComments }) => {
                 </Form.Group>
                 <button type="submit" className="commentbtn"><img className="btnSend" src={btnSend}>
                 </img></button>
-
             </Form>
         </div>
 

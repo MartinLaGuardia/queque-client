@@ -16,7 +16,7 @@ const RandomPlaceCard = ({ _id, name, imageURL, description, foodstyle, phone, a
                     </Card.Body>
                     <ListGroup className="list-group-flush">
                         <ListGroupItem>{description}</ListGroupItem>
-                        <ListGroupItem>{foodstyle}</ListGroupItem>
+                        <ListGroupItem>Comida: {foodstyle}</ListGroupItem>
                     </ListGroup>
                 </Card>
             </Link>

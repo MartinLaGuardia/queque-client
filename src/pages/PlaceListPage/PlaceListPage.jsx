@@ -37,7 +37,10 @@ const PlaceListPage = () => {
                                 <PlaceList places={places} />
 
                             </Col>
-                            <Col lg={4}>
+
+                            <h2 className='text-create'>Crea un lugar</h2>
+
+                            <Col className="newPlaceForm" lg={4}>
                                 <NewPlaceForm loadPlaces={loadPlaces} />
                             </Col>
                         </>

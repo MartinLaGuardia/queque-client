@@ -32,10 +32,9 @@ const HomePage = () => {
     return (
         <Container >
             <div >
-
                 <div className='radnom-cards'>
                     {randomPlaces.map(randomPlace => {
-                        return <Col md={4} key={randomPlace._id}> <RandomPlaceCard {...randomPlace} /> </Col>
+                        return <Col md={4} key={randomPlace._id}> <RandomPlaceCard className='radnom' {...randomPlace} /> </Col>
 
                     })}
                 </div>
@@ -44,7 +43,6 @@ const HomePage = () => {
                 </div>
 
             </div>
-
         </Container>
     )
 }

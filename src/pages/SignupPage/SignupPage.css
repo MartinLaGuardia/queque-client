@@ -1,6 +1,6 @@
 .SignUpForm {
 
-    background-color: #ffa700;
+    background-color: #2b5865;
     border-radius: 15px;
     position: relative;
     right: 5px;
@@ -9,6 +9,7 @@
     width: 500;
     height: 700px;
     top: 200px;
+    font-size: 1.4em;
 
 }
 

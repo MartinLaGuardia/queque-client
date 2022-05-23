@@ -1,6 +1,5 @@
-// import { useState, useContext } from "react"
 import { useState } from 'react'
-import { Form, Button, Container } from 'react-bootstrap'
+import { Form, Container } from 'react-bootstrap'
 import authService from '../../services/auth.service'
 import { useNavigate } from 'react-router-dom'
 import btnSend from './../../assets/img/Buttons/btnSend.png'
@@ -41,9 +40,14 @@ const SignupForm = () => {
 
     return (
 
-        <Container className='SignUpForm'>
+        <Container >
 
-            <Form onSubmit={handleSubmit}>
+            <Form className='SignUpForm' onSubmit={handleSubmit}>
+
+                <Form.Group className="mb-3" controlId="imageURL">
+                    <Form.Label className="text">ImageURL</Form.Label>
+                    <Form.Control type="imageURL" onChange={handleInputChange} name="imageURL" value={imageURL} />
+                </Form.Group>
 
                 <Form.Group className="mb-3" controlId="username">
                     <Form.Label className="text">Username</Form.Label>
@@ -60,16 +64,13 @@ const SignupForm = () => {
                     <Form.Control type="password" onChange={handleInputChange} name="password" value={password} />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="imageURL">
-                    <Form.Label className="text">ImageURL</Form.Label>
-                    <Form.Control type="imageURL" onChange={handleInputChange} name="imageURL" value={imageURL} />
-                </Form.Group>
+
 
                 <Form.Group className="mb-3" controlId="favFood">
                     <Form.Label className="text" >Fav Food</Form.Label>
                     <Form.Control type="favFood" onChange={handleInputChange} name="favFood" value={favFood} />
                 </Form.Group>
-                
+
                 <button type="submit" className='btnregistro'><img className='sendSign' src={btnSend}></img></button>
 
             </Form>

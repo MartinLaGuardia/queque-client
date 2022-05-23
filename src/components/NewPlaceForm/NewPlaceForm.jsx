@@ -1,6 +1,8 @@
 import { useContext, useState } from "react"
 import placesService from "../../services/places.service"
-import { Form, Button, Container,Col } from "react-bootstrap"
+import { Form, Button, Container, Col } from "react-bootstrap"
+import btnCreate from './../../assets/img/Buttons/btnCreate.png'
+
 import './NewPlaceForm.css'
 
 const NewPlaceForm = ({ loadPlaces }) => {
@@ -106,9 +108,10 @@ const NewPlaceForm = ({ loadPlaces }) => {
                     <Form.Control type="text" value={imageURL} onChange={handleInputChange} name="imageURL" />
                 </Form.Group>
 
-                <Button variant="light" type="submit">Crear</Button>
+                <button type="submit" className='create'><img className='btnCreate' src={btnCreate}></img></button>
+
             </Form>
-            </Col>
+        </Col>
         // </Container>
 
 

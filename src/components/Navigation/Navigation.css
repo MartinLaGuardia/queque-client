@@ -27,21 +27,22 @@
 
 }
 
-.text-LogOut {
+.LogOutNavi {
     justify-content: end;
     color: #ffffff;
     text-decoration: none;
-    margin-top: 65px;
+    margin-top: 57px;
     margin-right: 25px;
     font-size: 1.3em;
 
 }
 
 .text-currentUser {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 40px 10px;
     color: hwb(0 99% 1%);
     text-decoration: none;
-    margin-right: 230px;
+    margin-right: 380px;
     font-size: 3em;
     line-break: loose;
 
@@ -49,23 +50,19 @@
 }
 
 .text-currentUser2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 40px 10px;
     color: hwb(0 99% 1%);
     text-decoration: none;
-    margin-right: 140px;
+    margin-right: 350px;
     font-size: 3em;
     line-break: loose;
 
 
 }
 
-.que {
-    color: #ffa700;
-    text-decoration: none;
 
-}
-
-.signup {
+.signupNavi {
     display: flex;
     justify-content: center;
     padding-top: 40px;
@@ -87,6 +84,12 @@
     width: 300px;
     position: absolute;
     bottom: 30px;
-    left: 300px;
+    left: 50px;
     top: -55px
+}
+
+.itemsNav {
+    display: flex;
+    position: absolute;
+    left: 1580px;
 }

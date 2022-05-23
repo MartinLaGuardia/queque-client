@@ -17,29 +17,30 @@
 .btnEdit {
     width: 150px;
     position: absolute;
-    bottom: -110px;
-    right: 790px;
+    bottom: 35px;
+
+
 }
 
 .btnBorrar {
     width: 150px;
     position: absolute;
-    bottom: -110px;
-    right: 1015px;
+    bottom: 35px;
+    right: 705px;
 }
 
 .btnFav {
     width: 150px;
     position: absolute;
-    bottom: -110px;
-    right: 1250px;
+    top: -185px;
+    right: 1015px;
 }
 
 .btnDesfavorito {
     width: 160px;
     position: absolute;
-    bottom: -113px;
-    right: 1050px;
+    top: -190px;
+    right: 853px;
 }
 
 .btnSend {
@@ -49,13 +50,10 @@
 .btnGoBack {
     width: 150px;
     position: absolute;
-    top: 2300px;
+    top: 1500px;
     right: 50%;
 
 }
-
-
-
 
 .place-button1 {
     width: 150px;
@@ -71,14 +69,16 @@
 
 }
 
+
 .text-frame {
     padding: 15px;
     position: absolute;
     left: 100px;
-    color: #2b5865;
+    color: #4d97a0;
     text-decoration: none;
-    text-decoration: solid;
     padding-top: 50px;
+    height: 900px;
+    width: 900px;
 
 }
 
@@ -92,21 +92,21 @@
 .text-frame h2 {
     padding-bottom: 5px;
     padding-top: 5px;
-    text-decoration: underline #e57601;
 }
 
 .picturePlace {
     width: 500px;
     position: absolute;
-    bottom: -190px;
-    right: -35px;
+    bottom: -210px;
+    right: -105px;
 
 }
 
 .mapit {
     position: absolute;
     bottom: 300px;
-    right: -1100px;
+    right: -1010px;
+    top: 230px;
 
 }
 

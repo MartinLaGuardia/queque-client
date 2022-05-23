@@ -6,9 +6,9 @@ const PlaceCard = ({ _id, name, imageURL, description, foodstyle, phone, address
 
     return (
 
-        <Container className="cards">
-            <div>
-                <Card style={{ width: '18rem' }}>
+        <Container className="allList" >
+            <div className="cardsList" >
+                <Card style={{ width: '20rem' }}>
                     <Card.Img variant="top" src={imageURL} />
                     <Card.Body>
                         <Card.Title><strong>{name}</strong></Card.Title>

@@ -1,6 +1,6 @@
 .cardofplaces {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
 }
 
@@ -8,4 +8,5 @@
 
 .favPlaces {
     display: flex;
+    justify-content: flex-start;
 }
